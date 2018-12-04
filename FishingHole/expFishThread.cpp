@@ -58,7 +58,7 @@ void expFishThread::startFish_Exp(int trials, int iti, int pMode, int port, int 
 	double possLVals_h[(int)(size/2)];
 	double possLVals_l[(int)(size/2)];
 	
-	if (!fiftyFifty) {
+	if (fiftyFifty) {
 		predictive = false;
 		for(int i = 0; i < size; i++)
 			probabilityL[i] = 50.0;
