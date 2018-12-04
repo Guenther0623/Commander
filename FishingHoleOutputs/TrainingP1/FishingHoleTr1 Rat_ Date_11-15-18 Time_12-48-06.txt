@@ -1,0 +1,31 @@
+|          Fishing Hole Op Box         |
+|              Training 1              |
+|                                      |
+|               11-15-18               |
+****************************************
+
+
+**Rat Identification:  
+**Trials: 4
+**ITI: 0seconds
+****************************************
+
+
+************Begin Training 1************
+****************************************
+[12:48:07]     Dispensing right, 444820
+[12:48:08]     Starting timer for 0 seconds, 446321
+[12:48:08]     Timer Ended, 446321
+[12:48:08]     Dispensing left, 446432
+[12:48:10]     Starting timer for 0 seconds, 447933
+[12:48:10]     Timer Ended, 447934
+[12:48:10]     Dispensing right, 448047
+[12:48:11]     Starting timer for 0 seconds, 449548
+[12:48:11]     Timer Ended, 449549
+[12:48:11]     Dispensing right, 449658
+[12:48:13]     Starting timer for 0 seconds, 451161
+[12:48:13]     Timer Ended, 451161
+
+****************************************
+**************Training End**************
+****************************************

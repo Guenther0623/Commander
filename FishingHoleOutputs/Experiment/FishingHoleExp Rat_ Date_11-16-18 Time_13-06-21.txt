@@ -1,0 +1,85 @@
+|          Fishing Hole Op Box         |
+|              Experiment              |
+|                                      |
+|               11-16-18               |
+****************************************
+
+
+**Rat Identification:  
+**Trials: 3
+**ITI: 1seconds
+****************************************
+
+
+************Experiment Start************
+****************************************
+
+[13:06:21]     Probability for reward on left poke = 40%
+[13:06:21]     Probability for reward on right poke = 60%
+
+
+[13:06:26]     New Run Started
+[13:06:26]     Mid Beam Broken: Begin, 2526829
+[13:06:26]     Starting timer for 1 seconds, 2526921
+[13:06:27]     Timer Ended, 2527921
+[13:06:29]     Left Beam Broken, 2530050
+[13:06:29]     Dispensing left, 2530131
+[13:06:30]     Starting timer for 1 seconds, 2531687
+[13:06:31]     Timer Ended, 2532687
+
+[13:06:37]     New Run Started
+[13:06:37]     Mid Beam Broken: Begin, 2538291
+[13:06:37]     Starting timer for 1 seconds, 2538383
+[13:06:38]     Timer Ended, 2539383
+[13:06:39]     Left Beam Broken, 2540667
+[13:06:40]     Starting timer for 1 seconds, 2540764
+[13:06:41]     Timer Ended, 2541764
+
+[13:06:42]     New Run Started
+[13:06:42]     Mid Beam Broken: Begin, 2543323
+[13:06:42]     Starting timer for 1 seconds, 2543415
+[13:06:43]     Timer Ended, 2544415
+[13:06:44]     Right Beam Broken, 2545325
+[13:06:44]     Starting timer for 1 seconds, 2545423
+[13:06:45]     Timer Ended, 2546423
+[13:06:45]     
+Probability switch detected, moving to phase #1
+
+[13:06:45]     Probability for reward on left poke = 90%
+[13:06:45]     Probability for reward on right poke = 10%
+
+
+[13:06:48]     New Run Started
+[13:06:48]     Mid Beam Broken: Begin, 2548861
+[13:06:48]     Starting timer for 1 seconds, 2548973
+[13:06:49]     Timer Ended, 2549974
+[13:06:50]     Right Beam Broken, 2550955
+[13:06:50]     Starting timer for 1 seconds, 2551051
+[13:06:51]     Timer Ended, 2552051
+
+[13:06:51]     New Run Started
+[13:06:51]     Mid Beam Broken: Begin, 2552622
+[13:06:52]     Starting timer for 1 seconds, 2552716
+[13:06:52]     Timer Ended, 2553716
+[13:06:54]     Right Beam Broken, 2555271
+[13:06:54]     Starting timer for 1 seconds, 2555367
+[13:06:55]     Timer Ended, 2556367
+
+[13:06:56]     New Run Started
+[13:06:56]     Mid Beam Broken: Begin, 2556908
+[13:06:56]     Starting timer for 1 seconds, 2557002
+[13:06:57]     Timer Ended, 2558002
+[13:06:58]     Left Beam Broken, 2558993
+[13:06:58]     Dispensing left, 2559076
+[13:06:59]     Starting timer for 1 seconds, 2560630
+[13:07:00]     Timer Ended, 2561630
+[13:07:00]     
+Probability switch detected, moving to phase #2
+
+[13:07:00]     Probability for reward on left poke = 30%
+[13:07:00]     Probability for reward on right poke = 70%
+
+
+****************************************
+************Experiment End*************
+****************************************

@@ -1,0 +1,29 @@
+|          Fishing Hole Op Box         |
+|              Experiment              |
+|                                      |
+|               11-12-18               |
+****************************************
+
+
+**Rat Identification:  123
+**Trials: 2
+**ITI: 2seconds
+****************************************
+
+
+************Experiment Start************
+****************************************
+
+[18-13-46]     Probability for reward on left poke = 30%
+[18-13-46]     Probability for reward on right poke = 70%
+
+
+[18:13:51]     New Run Started
+[18:13:51]     Mid Beam Broken: Begin, 6115916
+[18:13:51]     Starting timer for 2 seconds, 6116009
+[18:13:52]     Starting timer for 2 seconds, 6116009
+[18:13:52]     Timer Canceled, 6116905
+
+****************************************
+************Experiment End*************
+****************************************

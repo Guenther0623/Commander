@@ -1,0 +1,23 @@
+|          Fishing Hole Op Box         |
+|              Experiment              |
+|                                      |
+|               11-15-18               |
+****************************************
+
+
+**Rat Identification:  
+**Trials: 5
+**ITI: 0seconds
+****************************************
+
+
+************Experiment Start************
+****************************************
+
+[14:12:08]     Probability for reward on left poke = 70%
+[14:12:08]     Probability for reward on right poke = 30%
+
+
+****************************************
+************Experiment End*************
+****************************************

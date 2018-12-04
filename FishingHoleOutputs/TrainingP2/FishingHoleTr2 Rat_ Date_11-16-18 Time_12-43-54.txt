@@ -1,0 +1,31 @@
+|          Fishing Hole Op Box         |
+|              Training 2              |
+|                                      |
+|               11-16-18               |
+****************************************
+
+
+**Rat Identification:  
+**Trials: 3
+**ITI: 0seconds
+****************************************
+
+
+************Begin Training 2************
+****************************************
+[12:43:57]     Left Beam Broken, 1179793
+[12:43:57]     Dispensing left, 1179879
+[12:43:58]     Starting timer for 0 seconds, 1181433
+[12:43:58]     Timer Ended, 1181434
+[12:44:00]     Right Beam Broken, 1182670
+[12:44:00]     Dispensing right, 1182758
+[12:44:01]     Starting timer for 0 seconds, 1184313
+[12:44:01]     Timer Ended, 1184313
+[12:44:03]     Right Beam Broken, 1185758
+[12:44:03]     Dispensing right, 1185843
+[12:44:04]     Starting timer for 0 seconds, 1187397
+[12:44:04]     Timer Ended, 1187397
+
+****************************************
+**************Training End**************
+****************************************
