@@ -33,10 +33,11 @@ private:
 	string _disabled2;
 	bool isDis;
 
-	bool playSound(int);
+	bool dispense(int pos);
+	bool playSound();
 	bool led(int pos, int state);
-	bool ledOn(int);
-	bool ledOff(int);
+	bool ledOn(int pos);
+	bool ledOff(int pos);
 	void clearBuffer();
 	
 public:
