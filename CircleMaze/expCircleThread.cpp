@@ -12,6 +12,8 @@
 #include "expCircleThread.h"
 
 
+//namespace expCircleThread {
+
 /*
  *	======== startCircle Experiment========
  *
@@ -24,179 +26,126 @@ void expCircleThread::startCircle_Exp(int trials, int startZone, int zones, int 
 
 
 
-/**
- *-----------------------------------------------------------
- *------------------Functions for Arduino--------------------
- *-----------------------------------------------------------
- *-----------------------------------------------------------
- */
+// /**
+//  *-----------------------------------------------------------
+//  *------------------Functions for Arduino--------------------
+//  *-----------------------------------------------------------
+//  *-----------------------------------------------------------
+//  */
 
 
-/*
- *	======== playSound ========
- *
- *  params:
- *	  (int) pos: position of dispenser, 0-7
- */
-bool expCircleThread::dispense(int pos)
-{
-	bool dispensed = true;
-	if (pos < 0 || pos > 7) {
-		cout << "dispense: Invalid position" << endl;
-		return false;
-	}
+// /*
+//  *	======== play_Sound ========
+//  *
+//  *  param status 
+//  */
+// void play_Sound(int duration)
+// {
+// 	bool reading = true;
+// 	stringstream sstm;
+// 	int soundDur = duration;
+// 	string comm_st = "play_sound ";
+// 	string expected = "Playing sound";
+// 	sstm<<comm_st<<soundDur;
 
-	// convert position to corresponding angle
-	int angle;
-	for (int i = 0; i < pos; i++)
-		angle += 45;
+// 	string new_input = sstm.str();
 
-	// load command to string
-	stringstream sstrm;
-	string comm = "REWARD ";
-	sstrm << comm << angle;
-	string new_input = sstrm.str();
+// 	ard->sendCommand(new_input);
 
-	// load expected results to string
-	string small = (angle < 100)? "0" : "";
-	string expected = "Dispensing Reward " + small + std::to_string(angle) + " degree, ";
 
-	// send command
-	ard->sendCommand(new_input);
+// 	while(reading){
+// 		if(ard->readCommand()){
+// 			QString qstr = QString::fromStdString(ard->lastLine);
 
-	// read arduino comm
-	bool reading = true;
-	while(reading) {
-		if(ard->readCommand()){
-			cout << ard->lastComm << endl;
-			if (ard->lastComm.compare(expected) == 0)
-				reading = false;
-			else
-				dispensed = false;
+// 			if(isDis){
+// 				if(ard->lastComm.compare(_disabled1) != 0){
+// 					//emit sendComm(qstr, 1);
+// 				}
+// 			}
+// 			else{
+// 				//emit sendComm(qstr, 1);
+// 			}
+
+// 			cout << ard->lastComm << endl;
+// 			if(ard->lastComm.compare(expected) == 0){
+// 				reading = false;
+// 			}
+// 		}
+// 	}
+// }
+
+// /*
+// *  LED
+// *	Controls LED behavior by communicating with arduino
+// *   
+// *	params:
+// *	  (int) pos: position of led, 0-7 or 8 for all
+// *	  (int) state: state to change led to, 1 for on or 0 for off
+// */
+// bool led(int pos, int state) {
+// 	if (pos < 0 || pos > 7) {
+// 		cout << "ledOff: Invalid position" << endl;
+// 		return false;
+// 	}
+
+// 	// convert position to corresponding angle
+// 	int angle;
+// 	for (int i = 0; i < pos; i++)
+// 		angle += 45;
+
+// 	// load command to string
+// 	stringstream sstm;
+// 	string comm = "LED ";
+// 	sstm << comm << state << angle;
+// 	string new_input = sstrm.str();
+
+// 	// load expected results to string
+// 	string stateString = (state == 1? "On" : "Off");
+// 	string expected = "Turning "+ stateString + " LED 0" + angle + " degree, ";
+// 	if (pos == 8) // turn all on/off
+// 		expected = "Turning "+ stateString + " All LEDs, ";
+
+// 	// send command
+// 	ard->sendCommand(new_input);
+
+// 	// read arduino comm
+// 	while(reading) {
+// 		if(ard->readCommand())
+// 			cout << ard->lastComm << endl;
+// 			if (ard->lastComm.compare(expected) == 0){
+// 				reading = false;
+// 			else
+// 				return false;
 			
-			QString qstr = QString::fromStdString(ard->lastLine);
-			emit sendComm(qstr, 1);
-		}
-	}
-
-	return dispensed;
-}
+// 			QString qstr = QString::fromStdString(ard->lastLine);
+// 			emit sendComm(qstr, 1);
+// 		}
+// 	}
+// }
 
 
-/*
- *	======== playSound ========
- *
- */
-bool expCircleThread::playSound()
-{
-	bool played = true;
-
-	// load command to string
-	stringstream sstrm;
-	string comm = "TONE";
-
-	// load expected results to string
-	string expected = "Playing Sound, ";
-
-	// send command
-	ard->sendCommand(comm);
-
-	// read arduino comm
-	bool reading = true;
-	while(reading) {
-		if(ard->readCommand()){
-			cout << ard->lastComm << endl;
-			if (ard->lastComm.compare(expected) == 0)
-				reading = false;
-			else
-				played = false;
-			
-			QString qstr = QString::fromStdString(ard->lastLine);
-			emit sendComm(qstr, 1);
-		}
-	}
-
-	return played;
-}
+// bool ledOn(int pos) {
+// 	return led(pos, 1);
+// }
 
 
-/*
-*  ======= led =======
-*	Controls LED behavior
-*   
-*	params:
-*	  (int) pos: position of led, 0-7 or 8 for all
-*	  (int) state: state to change led to, 1 for on or 0 for off
-*/
-bool expCircleThread::led(int pos, int state)
-{
-	bool lit = true;
-
-	if (pos < 0 || pos > 8) {
-		cout << "led: Invalid position" << endl;
-		return false;
-	}
-
-	// convert position to corresponding angle
-	int angle;
-	for (int i = 0; i < pos; i++)
-		angle += 45;
-
-	// load command to string
-	stringstream sstrm;
-	string comm = "LED ";
-	sstrm << comm << state << angle;
-	string new_input = sstrm.str();
-
-	// load expected results to string
-	string stateString = (state == 1? "On" : "Off");
-	string small = (angle < 100)? "0" : "";
-	string expected = "Turning "+ stateString + " LED " + small + std::to_string(angle) + " degree, ";
-	if (pos == 8) // turn all on/off
-		expected = "Turning "+ stateString + " All LEDs, ";
-
-	// send command
-	ard->sendCommand(new_input);
-
-	// read arduino comm
-	bool reading = true;
-	while(reading) {
-		if(ard->readCommand()) {
-			cout << ard->lastComm << endl;
-			if (ard->lastComm.compare(expected) == 0)
-				reading = false;
-			else
-				lit = false;
-			
-			QString qstr = QString::fromStdString(ard->lastLine);
-			emit sendComm(qstr, 1);
-		}
-	}
-
-	return lit;
-}
+// bool ledOff(int pos) {
+// 	return led(pos, 0);
+// }
 
 
-bool expCircleThread::ledOn(int pos) {
-	return led(pos, 1);
-}
+// void clearBuffer()
+// {
+// 	bool clearing = true;
 
+// 	while(clearing){
+// 		if(!ard->readCommand())
+// 			clearing = false;
+// 	}
+// }
 
-bool expCircleThread::ledOff(int pos) {
-	return led(pos, 0);
-}
+// /*
+//  * ========== End Functions for Arduino  =====================
+//  */
 
-
-void expCircleThread::clearBuffer()
-{
-	bool clearing = true;
-
-	while(clearing)
-		if(!ard->readCommand())
-			clearing = false;
-
-}
-
-/*
- * ========== End Functions for Arduino  =====================
- */
+// } // end namespace

@@ -103,7 +103,13 @@ void expFishThread::startFish_Exp(int trials, int iti, int pMode, int port, int 
 			}
 
 			if (switchCount%size >= size) {  // if whole array used, shuffle
-				shuffleArrayD(probabilityL, size);
+				for (int i = 0; i < size-1; i++)
+					if(i < size/2)
+						possLVals_h[i] = allPossVals[i];
+					else
+						possLVals_l[i-(size/2)] = allPossVals[i];
+
+				createProbsArray(probabilityL, possLVals_h, possLVals_l, size);
 			}
 
 			ostringstream printRatioProbL, printRatioProbR;
@@ -480,10 +486,10 @@ void expFishThread::createProbsArray(double* arrTot, double* arrH, double* arrL,
 }
 
 
-void expFishThread::shuffleArray(int* arr, int size)
+void expFishThread::shuffleArray(int* arr, int vals)
 {
 	srand( time(NULL) );
-	for(int i = 0; i < size; i++)
+	for(int i = 0; i < vals; i++)
 	{
 		int j = rand() % (i+1);
 		swap(&arr[i], &arr[j]);
@@ -491,10 +497,10 @@ void expFishThread::shuffleArray(int* arr, int size)
 }
 
 
-void expFishThread::shuffleArrayD(double* arr, int size)
+void expFishThread::shuffleArrayD(double* arr, int vals)
 {
 	srand( time(NULL) );
-	for(int i = 0; i < size; i++)
+	for(int i = 0; i < vals; i++)
 	{
 		int j = rand() % (i+1);
 		swapD(&arr[i], &arr[j]);
