@@ -32,7 +32,7 @@ private:
 	QGroupBox *createExpButtons();
 
 	FishingHole fish;
-	//CircleMaze circ;
+	CircleMaze circ;
 
 	void closeEvent(QCloseEvent *event);
 

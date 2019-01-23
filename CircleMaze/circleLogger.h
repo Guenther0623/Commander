@@ -5,8 +5,9 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <QDir>
 
-#include "defines.h"
+#include "CircleMaze/circle_defines.h"
 
 using namespace std;
 
@@ -15,7 +16,9 @@ class CircleLogger
 private:
     enum logTypes{
         DEBUG = -1,
+        TR1 = 0,
         EXP = 1,
+        TR2 = 2,
     }logMode;
 
     string loggerName;

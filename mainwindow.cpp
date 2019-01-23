@@ -220,7 +220,7 @@ void MainWindow::openWindow()
 		}	break;
 
 		case 3:
-		{	//circ.show();
+		{	circ.show();
 			forceClosing = true;
 			this->close();
 		}	break;

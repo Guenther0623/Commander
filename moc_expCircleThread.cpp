@@ -22,7 +22,7 @@ static const uint qt_meta_data_expCircleThread[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -36,6 +36,8 @@ static const uint qt_meta_data_expCircleThread[] = {
 
  // slots: signature, parameters, type, tag, flags
       74,   69,   16,   16, 0x0a,
+     112,   69,   16,   16, 0x0a,
+     149,   69,   16,   16, 0x0a,
 
        0        // eod
 };
@@ -43,7 +45,9 @@ static const uint qt_meta_data_expCircleThread[] = {
 static const char qt_meta_stringdata_expCircleThread[] = {
     "expCircleThread\0\0,\0sendComm(QString,int)\0"
     "updateWindow()\0naturalEnd()\0,,,,\0"
-    "startCircle_Exp(int,int,int,int,int)\0"
+    "startCircle_Exp(int,int,int*,int,int)\0"
+    "startCircle_Tr1(int,int,int,int,int)\0"
+    "startCircle_Tr2(int,int,int,int,int)\0"
 };
 
 void expCircleThread::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -55,7 +59,9 @@ void expCircleThread::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 0: _t->sendComm((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 1: _t->updateWindow(); break;
         case 2: _t->naturalEnd(); break;
-        case 3: _t->startCircle_Exp((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
+        case 3: _t->startCircle_Exp((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int*(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
+        case 4: _t->startCircle_Tr1((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
+        case 5: _t->startCircle_Tr2((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
         default: ;
         }
     }
@@ -93,9 +99,9 @@ int expCircleThread::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 6;
     }
     return _id;
 }

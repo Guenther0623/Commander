@@ -33,19 +33,26 @@ private:
 	string _disabled2;
 	bool isDis;
 
+
 	bool dispense(int pos);
-	bool playSound();
+	bool playSound(int freq);
 	bool led(int pos, int state);
 	bool ledOn(int pos);
 	bool ledOff(int pos);
 	void clearBuffer();
 	
+	void countdown(int, bool);
+	bool signAndWait(int, int);
+	void zoneForTrials(int, int);
+	bool scanning();
+
 public:
 	bool exp_running;
 
 public slots:
-	void startCircle_Exp(int, int, int, int, int);
-
+	void startCircle_Exp(int, int, int*, int, int);
+    void startCircle_Tr1(int, int, int, int, int);
+    void startCircle_Tr2(int, int, int, int, int);
 signals:
 	void sendComm(QString, int);
 	void updateWindow();

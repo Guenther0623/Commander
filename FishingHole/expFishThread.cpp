@@ -29,7 +29,7 @@ void expFishThread::startFish_Exp(int trials, int iti, int pMode, int port, int 
 	int spkrFreq = 700;
 	int soundDuration = 200;
 	ard = new Arduino(port, baud);
-	ard->setTimeout_us(500);
+	ard->setTimeout_us(500);	
 	set_Frequency(spkrFreq);
 
 	// set up random number generator
@@ -115,7 +115,7 @@ void expFishThread::startFish_Exp(int trials, int iti, int pMode, int port, int 
 			QString qstr2 = QString::fromStdString(stringProbR);
 			
 			emit sendComm(qstr1, 1);
-			emit sendComm(qstr2, 1);	
+			emit sendComm(qstr2, 1);
 			emit sendComm("", 0);
 			emit updateWindow();
 		}
@@ -137,7 +137,7 @@ void expFishThread::startFish_Exp(int trials, int iti, int pMode, int port, int 
 				emit updateWindow();
 
 				led_Mid(0);
-				countdown(iti, false);
+				countdown(2, false);
 				led_LeftRight(1);
 			}
 
@@ -254,13 +254,14 @@ void expFishThread::startFish_Exp(int trials, int iti, int pMode, int port, int 
 			}
 		}
 	}
+	emit sendComm("Shutting down experiment", 0);
 	led_Mid(0);
 	led_LeftRight(0);
 	exp_running = false;
 	
 	emit naturalEnd();
 	emit sendComm("\n****************************************", 0);
-	emit sendComm("************Experiment End*************", 0);
+	emit sendComm("*************Experiment End*************", 0);
 	emit sendComm("****************************************", 0);
 	emit updateWindow();
 	return;

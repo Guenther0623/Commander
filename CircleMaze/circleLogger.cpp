@@ -19,6 +19,8 @@ CircleLogger::CircleLogger(int mode, string ratN)
     ratNum = ratN;
     logMode = logTypes(mode);
 
+    QString directory;
+
     time_t t = time(nullptr);
     struct tm * now = localtime( & t);
 
@@ -62,12 +64,33 @@ CircleLogger::CircleLogger(int mode, string ratN)
         monthStamp = ossMonth.str();
 
     stampTime = hourStamp + ":" + minStamp + ":" + secStamp;
+    string stampTimeT = hourStamp + "-" + minStamp + "-" + secStamp;
     stampDate = monthStamp + "-" + dayStamp + "-" + ossYear.str();
 
-    if(mode == _DEBUG)
-        loggerName = "TextOutputs/Debug Files:" + stampDate + "_" + stampTime + ".txt";
-    else if(mode == EXP)
-        loggerName = "TextOutputs/CircleMazeOutputs Files:" + stampDate + "_" + stampTime + "_Rat" + ratN + ".txt";
+    if(mode == DEBUG){ 
+        directory  = "CircleMazeOutputs/Debug/";
+        loggerName = directory.toStdString() + "DebugFiles " + "_Rat" + ratN + stampDate + "_" + stampTime + ".txt";
+    }
+    else if(mode == TR1){ 
+        directory  = "CircleMazeOutputs/TrainingP1/";
+        loggerName = directory.toStdString() + "CircleMazeTr1 Rat_" + ratN + stampDate + "_" + stampTime + ".txt";
+    }
+    else if(mode == TR2){ 
+        directory  = "CircleMazeOutputs/TrainingP2/";
+        loggerName = directory.toStdString() + "CircleMazeTr2 Rat_" + ratN + stampDate + "_" + stampTime + ".txt";
+    }
+    else if(mode == EXP){ 
+        directory  = "CircleMazeOutputs/Experiment/";
+        loggerName = directory.toStdString() + "CircleMazeExp Rat_" + ratN + stampDate + "_" + stampTime + ".txt";
+    }   
+
+    QDir dir(directory);
+
+    if(!dir.exists()){
+        QDir().mkdir(directory);
+    }
+
+    cout << loggerName << endl;
 
     ofstream temp(loggerName.c_str());
     textFile.open(loggerName.c_str());
@@ -181,6 +204,21 @@ void CircleLogger::printTitle(int param1, int param2, int param3)
         log("|               " + stampDate + "               |", 0);
         log("****************************************\n", 0);
         log("****************************************\n\n", 0);
+        //log("Rat Identification:  " + ratNum, 0);
+    }
+
+    if(logMode == TR1){
+        log("|           Circle Maze  File          |", 0);
+        log("|              Training 1              |", 0);
+        log("|                                      |", 0);
+        log("|               " + stampDate + "               |", 0);
+        log("****************************************\n\n", 0);
+        log("**Rat Identification:  " + ratNum, 0);
+        log("**Start Zone:  " + ossParam1.str(), 0);
+        log("**Total Trials:  " + ossParam3.str(), 0);
+        log("****************************************\n\n", 0);
+
+
         //log("Rat Identification:  " + ratNum, 0);
     }
 
